@@ -14,7 +14,8 @@ const page = () => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const handleSignIn = useCallback(async () => {
     setIsLoading(true);
-    await signIn();
+    const res = await signIn();
+    console.log('sign in ', res);
     setIsLoading(false);
     window.location.href = '/';
   }, []);
